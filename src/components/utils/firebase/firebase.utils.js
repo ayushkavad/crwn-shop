@@ -53,5 +53,6 @@ export const createUserDocumentFormAuth = async (userAuth) => {
     } catch (error) {
       console.log(`user login error ${error.message}`);
     }
+    return docRef;
   }
 };
