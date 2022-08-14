@@ -1,5 +1,7 @@
-import { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useState, useContext } from 'react';
+
+import { UserContaxt } from '../contaxts/user.contaxt';
+
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFormAuth,
@@ -20,6 +22,8 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormField);
   const { displayName, email, password, confirmPassword } = formFields;
 
+  const { setCurrentUser } = useContext(UserContaxt);
+
   const resetFormField = () => {
     setFormFields(defaultFormField);
   };
@@ -37,6 +41,7 @@ const SignUpForm = () => {
         email,
         password
       );
+      setCurrentUser(user);
       await createUserDocumentFormAuth(user, { displayName });
       resetFormField();
     } catch (error) {
