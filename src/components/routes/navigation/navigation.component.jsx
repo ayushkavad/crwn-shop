@@ -1,7 +1,6 @@
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { ReactComponent as CrownLogo } from '../../assets/crown.svg';
-import { useContext } from 'react';
 import { SignOutUser } from '../../utils/firebase/firebase.utils';
 import { UserContaxt } from '../../contaxts/user.contaxt';
 import '../navigation/navigation.styles.scss';
@@ -13,7 +12,7 @@ const Navigation = () => {
     await SignOutUser();
     setCurrentUser(null);
   };
-  console.log(currentUser);
+
   return (
     <Fragment>
       <div className="navigation">

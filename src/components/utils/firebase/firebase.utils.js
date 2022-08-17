@@ -7,8 +7,8 @@ import {
   createUserWithEmailAndPassword,
   signOut,
 } from 'firebase/auth';
-
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+
 //  web app's Firebase configuration
 const firebaseConfig = {
   apiKey: 'AIzaSyBR-ZvGYjUO071pvtv1Bkr0ZsqnuXULLKw',
@@ -16,7 +16,7 @@ const firebaseConfig = {
   projectId: 'crwn-clothing-db-9567a',
   storageBucket: 'crwn-clothing-db-9567a.appspot.com',
   messagingSenderId: '1022050652801',
-  appId: '1:1022050652801:web:9c86e244d7aee698673380',
+  appId: '1:1022050652801:web:9c86e244d7aee698673380 ',
 };
 
 // Initialize Firebase
@@ -34,6 +34,7 @@ export const signInWithGooglePopup = () =>
 
 export const db = getFirestore();
 
+// CREATE USER DOCUMENT FROM AUTH
 export const createUserDocumentFormAuth = async (
   userAuth,
   additionalInformation = {}
@@ -61,14 +62,17 @@ export const createUserDocumentFormAuth = async (
   }
 };
 
+// CREATE AUTH USER WITH EMAIL AND PASSWORD
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
   return await createUserWithEmailAndPassword(auth, email, password);
 };
 
+// SINGIN AUTH USER WITH EMAIL AND PASSWORD
 export const signInAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
   return await signInWithEmailAndPassword(auth, email, password);
 };
 
+// SINGOUT USER
 export const SignOutUser = async () => await signOut(auth);

@@ -1,6 +1,5 @@
 import { useState, useContext } from 'react';
 import { UserContaxt } from '../contaxts/user.contaxt';
-
 import {
   createUserDocumentFormAuth,
   signInAuthUserWithEmailAndPassword,
@@ -8,7 +7,6 @@ import {
 } from '../utils/firebase/firebase.utils';
 import FormInput from '../form-imput/form-imput.component';
 import Button from '../button/button.component';
-
 import './sign-in-form.styles.scss';
 
 const defaultFormField = {
@@ -19,7 +17,6 @@ const defaultFormField = {
 const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormField);
   const { email, password } = formFields;
-
   const { setCurrentUser } = useContext(UserContaxt);
 
   const resetFormField = () => {

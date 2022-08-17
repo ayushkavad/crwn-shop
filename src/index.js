@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import UserProvider from './components/contaxts/user.contaxt';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import App from './App';
 import './index.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
