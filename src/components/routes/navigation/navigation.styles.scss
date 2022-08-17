@@ -13,7 +13,7 @@
     padding: 25px;
   }
 
-  .nav-links-container {
+  .nav-link-container {
     width: 50%;
     height: 100%;
     display: flex;
@@ -21,7 +21,7 @@
     justify-content: flex-end;
 
     .nav-link {
-      padding: 10px 20px;
+      padding: 10px;
       cursor: pointer;
     }
   }
