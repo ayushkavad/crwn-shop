@@ -1,5 +1,17 @@
+import { useContext } from 'react';
+import { ProductsContaxt } from '../../contaxts/products.contaxt';
+
 const Shop = () => {
-  return <p>i'm in the shop</p>;
+  const { product } = useContext(ProductsContaxt);
+  return (
+    <div>
+      {product.map(({ id, name }) => (
+        <div key={id}>
+          <h1>{name}</h1>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default Shop;
